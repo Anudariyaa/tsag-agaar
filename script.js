@@ -5,12 +5,19 @@ const searchBtn = document.querySelector(".search button")
 const hotiinNer = document.querySelector(".city")
 const degree = document.querySelector(".temp")
 const weatherIcon = document.querySelector(".weather-icon")
+const windspeed = document.querySelector(".windspeed")
+const chiigshel = document.querySelector(".chiigshel")
+
 
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`)
     const data = await response.json()
     hotiinNer.innerHTML = data.name
     degree.innerHTML = data.main.temp + "℃"
+
+   windspeed.innerHTML = data.wind.speed
+   chiigshel.innerHTML = data.main.humidity
+
     if (data.weather [0].main === "Rain") {
         weatherIcon.src = "zurag/rain.png"
     } else if (data.weather [0].main === "Snow") {
