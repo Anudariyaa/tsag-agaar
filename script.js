@@ -16,7 +16,7 @@ async function checkWeather(city) {
     degree.innerHTML = data.main.temp + "℃"
 
    windspeed.innerHTML = data.wind.speed
-   chiigshel.innerHTML = data.main.humidity
+   chiigshel.innerHTML = data.main.humidity + "%"
 
     if (data.weather [0].main === "Rain") {
         weatherIcon.src = "zurag/rain.png"
